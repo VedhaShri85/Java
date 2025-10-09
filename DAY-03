@@ -1,0 +1,237 @@
+
+#1 print even numbers from 5 to 55
+import java.util.Scanner;
+public class ForEven{
+    public static void main(String[]args){
+        for(int i=5;i<=55;i++){
+            i=i+1;
+            System.out.println("Iteration: "+i);
+        }
+    }
+}
+#2 print multiplication table from 1 to 20 for a user-entered number
+import java.util.Scanner;
+public class Multiplication {
+    public static void main(String[]args){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int n=s.nextInt();
+        System.out.println("Multiplication table of the given number is ");
+        for(int i=1;i<=20;i++){
+
+            System.out.println(n+"x"+i+"="+(i*n));
+        }
+    }
+}
+
+
+#3 password retry system using while loop condition
+import java.util.*;
+public class Password{
+    public static void main(String[]args){
+        Scanner s=new Scanner(System.in);
+        int attempts=0;
+        String CorPword="ABC@123";
+        boolean success=false;
+
+        while (attempts<3) {
+            System.out.println("Enter a password:");
+            String p = s.next();
+            if (CorPword.equals(p)) {
+                System.out.println("Access Granted");
+                success = true;
+                break;
+            } else {
+                attempts++;
+                if (attempts < 3) {
+                    System.out.println("Wrong." + (3-attempts) + "more attempts left");
+
+
+                }
+            }
+        }
+            if(!success){
+                System.out.println("Limits exceeded");
+            }
+
+    }
+}
+#4 Factorial of a number
+import java.util.*;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        long fact = 1;
+
+        for (int i = 1; i <= n; i++) {
+            fact *= i; 
+        }
+        System.out.println("Factorial of " + n + " is " + fact);
+        sc.close();
+    }
+}
+#5 all prime numbers between 1 and 10
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+
+        System.out.println("Prime numbers between 1 and 10 are:");
+
+        for (int i=2;i<=10;i++) { 
+            boolean isPrime = true;
+
+            for (int j = 2; j <= i / 2; j++) {
+                if (i %j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(i+ " ");
+            }
+        }
+    }
+}
+#Practice Exercises
+#6 Right Angled Triangle
+public class TriangleStar{
+    public static void main(String[]args){
+
+        for(int i=1;i<=4;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+
+            }
+            System.out.println(" ");
+        }
+    }
+}
+
+#7 Use nested loop to print square pattern 
+public class ReverseTriangle{
+    public static void main(String[]args){
+
+        for(int i=1;i<=4;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+
+            }
+            System.out.println(" ");
+        }
+    }
+}
+
+#8 Reverse Triangle 
+public class ReverseTriangle {
+    public static void main(String[] args) {
+        int n = 4;
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+#9 Number Pyramid
+public class NumberPyramid {
+    public static void main(String[]args){
+        for(int i=1;i<=6;i++){
+            for(int j=1;j<=i;j++){
+
+                System.out.print(j +" ");
+            }
+            System.out.println(" ");
+        }
+    }
+}
+
+#10 Pyramid Pattern 
+public class Pyramid {
+    public static void main(String[] args) {
+        int n = 5; // height of pyramid
+
+        for (int i = 1; i <= n; i++) {
+            // print spaces
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+            // print stars
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+#11 Diamond Pattern
+public class Diamond {
+    public static void main(String[] args) {
+        int n = 5;
+
+        // upper pyramid
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++)
+                System.out.print(" ");
+            for (int k = 1; k <= (2 * i - 1); k++)
+                System.out.print("*");
+            System.out.println();
+        }
+
+        // lower inverted pyramid
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = n; j > i; j--)
+                System.out.print(" ");
+            for (int k = 1; k <= (2 * i - 1); k++)
+                System.out.print("*");
+            System.out.println();
+        }
+    }
+}
+
+#12 Hollow Pyramid 
+public class HollowPyramid {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            // print spaces
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+
+            // print stars and hollow space
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                if (k == 1 || k == (2 * i - 1) || i == n)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+
+#13 Floyd's Triangle
+public class FloydsTriangle {
+    public static void main(String[] args) {
+        int n = 5; // number of rows
+        int num = 1; // starting number
+
+        for (int i = 1; i <= n; i++) {      // loop for rows
+            for (int j = 1; j <= i; j++) {  // loop for columns
+                System.out.print(num + " ");
+                num++;                      // increment number
+            }
+            System.out.println();           // new line after each row
+        }
+    }
+}
